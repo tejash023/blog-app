@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container{
+  margin: auto 10%;
+}
+
+.heading-content{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1{
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.add-blog{
+  margin: 10px 0;
+  padding: 7px 10px;
+  background-color: rgba(255, 68, 0, 0.788);
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.blog-post{
+  height: auto;
+  background-color: beige;
+  padding: 15px;
+  border-radius: 10px;
+  width: auto;
+  margin: 16px 0;
+}
+
+.heading-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blog-heading{
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+.blog-date{
+  color: orangered;
+  padding: 4px 8px;
+  width: auto;
+  border-radius: 7px;
+  display: inline-block;
+  margin: 6px 0;
+}
+
+.blog-action{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.blog-like, .blog-delete{
+  color: orangered;
+  font-size: 1.5rem;
+}
+
+.blog-content{
+  margin-top: 10px;
+  line-height: 25px;
+}
+
+.blog-author{
+  color: orangered;
+  margin: 1rem 0;
+}
+
+
+/* Add Blog Section */
+.add-blog-section{
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.add-blog-section input, .add-blog-content{
+  padding: 10px 5px;
+  border: 2px solid rgba(255, 68, 0, 0.653);
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.add-blog-submit{
+  margin: 10px 0;
+  padding: 9px 10px;
+  background-color: rgba(255, 68, 0, 0.788);
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 150px;
+}
+.add-blog-submit:hover{
+  
+  background-color: orangered;
+  
+}
+
+.footer-blog{
+  height: auto;
+  color: white;
+  background-color:rgba(255, 68, 0, 0.788);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 2px;
+  
+}
+.footer-blog h3{
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.social-icons{
+  font-size: 1rem;
+  
+}
+
+.social-icons a{
+  color: white;
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+.social-icons a:hover{
+  color: orangered;
+  
+}
+
+@media only screen and (max-width: 600px){
+  .heading-content{
+    
+    justify-content: center;
+  }
+
+  .blog-heading{
+    font-size: 1rem;
+    margin-right: 11px;
+  }
+
+  
+}
