@@ -84,7 +84,7 @@ module.exports.blogReact = (req, res) => {
 }
 
 //render signup page
-module.exports.singup = (req, res) => {
+module.exports.signup = (req, res) => {
   return res.render('sign-up');
 }
 

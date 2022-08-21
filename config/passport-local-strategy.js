@@ -16,7 +16,7 @@ passport.use(new LocalStrategy(
       if(err){console.log('Error finding the user -----> Passport'); return done(err);}
 
       if(!user || user.password != password){
-        console.log('Invalid Username/Password');
+        console.log('Invalid Username/Password ---> Passport');
         return done(null, false);
       }
 
