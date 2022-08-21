@@ -1,15 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-.container{
-  margin: auto 10%;
-}
 
 .heading-content{
   display: flex;
@@ -133,7 +122,7 @@ h1{
 }
 .footer-blog h3{
   margin-right: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .social-icons{
@@ -144,7 +133,7 @@ h1{
 .social-icons a{
   color: white;
   margin-right: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .social-icons a:hover{
   color: orangered;

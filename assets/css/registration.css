@@ -1,0 +1,118 @@
+
+.user-signup{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: midnightblue;
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.signup-form h2{
+  color: white;
+  margin-bottom: 15px;
+}
+
+.signup-form input{
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 90%;
+  outline: none;
+  border: none;
+  font-size: 0.8rem;
+}
+
+.signup-form button{
+  padding: 8px 15px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: orangered;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.signup-form a{
+  text-decoration: none;
+  color: white;
+  margin: 10px 0;
+}
+
+.signup-form span{
+  font-size: bolder;
+  color: orangered;
+  
+}
+
+
+
+.user-signin{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: midnightblue;
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.signin-form h2{
+  color: white;
+  margin-bottom: 15px;
+}
+
+.signin-form input{
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 80%;
+  outline: none;
+  border: none;
+  font-size: 0.8rem;
+}
+
+.signin-form button{
+  padding: 8px 15px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: orangered;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.signin-form a{
+  text-decoration: none;
+  color: white;
+  margin: 10px 0;
+}
+
+.signin-form span{
+  font-size: bolder;
+  color: orangered;
+  
+}

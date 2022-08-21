@@ -1,5 +1,6 @@
 //require mongoose
 const mongoose = require('mongoose');
+const { boolean } = require('webidl-conversions');
 
 const blogSchema = new mongoose.Schema({
   blogTitle:{
@@ -17,8 +18,17 @@ const blogSchema = new mongoose.Schema({
   blogAuthor:{
     type:String,
     required:true
+  },
+  blogLike:{
+    type:Boolean,
+    required:false
   }
 });
 
+
+
 const BlogPost = mongoose.model('BlogPost', blogSchema);
+
 module.exports = BlogPost;
+
+
