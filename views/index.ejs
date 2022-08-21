@@ -9,7 +9,9 @@
       <h1>Welcome to Tejash's Blog</h1>
       <a href="http://127.0.1.1:8080/add-blog"><button class="add-blog">Add Blog</button></a>
     </div>
-    <% for(let i of BlogPost) { %>
+    
+
+    <% BlogPost.slice().reverse().forEach( i => { %>
     
     <div class="blog-post">
       
@@ -26,7 +28,7 @@
       <h4 class="blog-author"> By - <%= i.blogAuthor %> </h4>
     
     </div>
-    <% } %>
+    <% })%>
   
   </div>
  

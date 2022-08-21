@@ -27,7 +27,7 @@ module.exports.addBlog = (req, res) => {
 
 //create Blog
 module.exports.createBlog = (req, res) => {
-
+  
   //Populate mongo DB
   var datetime = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
   console.log(datetime);

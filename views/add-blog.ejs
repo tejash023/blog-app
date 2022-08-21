@@ -11,7 +11,7 @@
       <form action="/add-blog" method = "post" class="add-blog-section">
         <input name="blogTitle" type="text" class="add-blog-title" placeholder="Add Blog Title" required>
         <textarea name="blogContent" class="add-blog-content" cols="30" rows="10" placeholder="Enter blog content" required></textarea>
-        <input name="blogAuthor" type="text" class="add-blog-author" placeholder="Your name" required>
+        <input name="blogAuthor" type="text" class="add-blog-author" placeholder="<%= user.name %>">
         <button type="submit" class="add-blog-submit">Submit Blog</button> 
       </form>
     
