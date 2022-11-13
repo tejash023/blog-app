@@ -43,6 +43,7 @@ h1{
 .blog-heading{
   margin-bottom: 8px;
   font-size: 1.5rem;
+  color: orangered;
 }
 .blog-date{
   color: orangered;
@@ -61,13 +62,14 @@ h1{
 }
 
 .blog-like, .blog-delete{
-  color: orangered;
+  color: #e91e63;
   font-size: 1.5rem;
 }
 
 .blog-content{
   margin-top: 10px;
   line-height: 25px;
+  color: rgb(62, 29, 5);
 }
 
 .blog-author{

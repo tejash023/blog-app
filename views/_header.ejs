@@ -1,8 +1,8 @@
 <header>
-  <h2> <a href="/" class="href">Blogs</a></h2>
+  <h2 class="logo-heading"> <a href="/" class="href">Blogs</a></h2>
   <div class="login">
     <% if(locals.user){ %>
-      <h3>Hi, <%= user.name %></h3>
+      <p>Hi, <%= user.name %></p>
       <a href="/sign-out">Sign Out</a>
     <% }else{ %>
       <a href="/login">Login</a>

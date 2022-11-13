@@ -22,20 +22,9 @@ header {
   padding: 0 10%;
 }
 
-header a {
-  color: orangered;
-  text-decoration: none;
-  background-color: white;
-  padding: 7px 10px;
-  border-radius: 5px;
-}
 
-header h2 {
-  color: white;
-  background-color: orangered;
-  font-size: 1.5rem;
-  margin-right: 10px;
-}
+
+
 
 header h3 {
   color: white;
@@ -44,11 +33,31 @@ header h3 {
   margin-right: 5px;
 }
 
+.logo-heading a{
+  color: white;
+  text-decoration: none;
+}
+
 .login{
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 21%;
+  justify-content: flex-end;
+  width: 25%;
+  gap: 1rem
+}
+
+.login p{
+  font-size: 13px;
+    font-weight: 600;
+    color: white;
+}
+
+.login a {
+  color: orangered;
+  text-decoration: none;
+  background-color: white;
+  padding: 7px 10px;
+  border-radius: 5px;
 }
 
 
@@ -86,9 +95,18 @@ header h3 {
   .login{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 50%;
+    justify-content: flex-end;
+    width: 55%;
     font-size: 1rem;
+  }
+
+  .login a{
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 0px;
+    border-radius: 0px;
+    width: 70%;
   }
 
   .login a:hover{
