@@ -81,7 +81,7 @@ header h3 {
   
 }
 
-@media only screen and (max-width: 645px) {
+@media only screen and (max-width: 950px) {
   .login{
     display: flex;
     align-items: center;
@@ -90,11 +90,15 @@ header h3 {
     font-size: 1rem;
   }
 
+  .login a:hover{
+    border-bottom: 2px solid white;
+  }
+
   header a{
     color: white;
     text-decoration: none;
     background-color: transparent;
-    padding: 7px 0px; */
+    padding: 5px 2px;
     border-radius: 0px;
   }
 }

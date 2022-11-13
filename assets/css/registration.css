@@ -12,7 +12,8 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: midnightblue;
+  background-image: linear-gradient(-1095deg, #daba45 0%, #ff5722 100%)
+
   width: 30%;
   height: auto;
   border-radius: 5px;
@@ -72,7 +73,8 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: midnightblue;
+  background-image: linear-gradient(-1095deg, #daba45 0%, #ff5722 100%)
+
   width: 30%;
   height: auto;
   border-radius: 5px;
@@ -115,4 +117,40 @@
   font-size: bolder;
   color: orangered;
   
+}
+
+
+@media only screen and (max-width: 990px) {
+
+  .signup-form{
+    width: 40%;
+  }
+  .signin-form{
+    width: 40%;
+  }
+
+}
+
+@media only screen and (max-width: 750px) {
+
+  .signup-form{
+    width: 50%;
+  }
+
+  .signin-form{
+    width: 50%;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .signup-form{
+    width: 80%;
+  }
+
+  .signin-form{
+    width: 80%;
+  }
+
 }
