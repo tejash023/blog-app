@@ -1,9 +1,10 @@
+require('dotenv').config();
 //require express 
 const express = require('express');
 const { ConnectionCreatedEvent } = require('mongodb');
 
 //declaring port
-const port = 8080;
+const port = process.env.PORT || '8080';
 
 //require mongoose
 const db = require('./config/mongoose');
@@ -39,11 +40,11 @@ app.use(express.urlencoded());
 //mongo store is used to store a session cookie
 app.use(session({
   name: 'blog',
-  secret: 'tejashwarajvardhan',
+  secret: process.env.SECRET_KEY,
   saveUninitialized: false,
   resave: false,
   store: MongoStore.create({
-    mongoUrl:'mongodb://localhost/blog_post_db',
+    mongoUrl:process.env.DB_URL,
   }),
   cookie: {
     maxAge: (1000 * 60 * 100)
@@ -64,9 +65,9 @@ app.use('/', require('./routes'));
 //starting server
 app.listen(port, function(err){
   if(err){
-    console.log(`Error in running the server: ${err}`);
+    //console.log(`Error in running the server: ${err}`);
   }
-  console.log(`Server is running successfully on port ${port}`);
+  //console.log(`Server is running successfully on port ${port}`);
 })
 
 

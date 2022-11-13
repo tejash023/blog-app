@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //connect to db
-mongoose.connect('mongodb://localhost/blog_post_db');
+mongoose.connect(process.env.DB_URL);
 
 //acquire the connection to check if connection is established successfully
 const db = mongoose.connection;
