@@ -34,7 +34,7 @@ module.exports.createBlog = (req, res) => {
   BlogPost.create({
     blogTitle: req.body.blogTitle,
     blogContent:req.body.blogContent,
-    blogDate: datetime.slice(0,9),
+    blogDate: datetime.slice(0,10),
     blogAuthor: req.body.blogAuthor
   }, function(err, newBlogPost){
     if(err){
