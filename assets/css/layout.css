@@ -9,6 +9,7 @@
 
 .container{
   margin: auto 10%;
+  
 }
 
 header {
@@ -86,7 +87,7 @@ header h3 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 40%;
+    width: 50%;
     font-size: 1rem;
   }
 
