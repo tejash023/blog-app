@@ -1,10 +1,7 @@
 const passport = require('passport');
 const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const crypto = require('crypto');
-const { request } = require('http');
 
-const user = require('../models/user');
-const { Strategy } = require('passport-local');
 const User = require('../models/user');
 
 //tell passport to use new starategy for google login
@@ -40,4 +37,6 @@ passport.use(new googleStrategy({
     });
   }
 
-))
+));
+
+module.exports = passport;
