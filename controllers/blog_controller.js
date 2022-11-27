@@ -12,7 +12,8 @@ module.exports.displayblog = function(req, res){
     
     return res.render('index', {
       BlogPost: blogPost,
-      Like: 'regular'
+      Like: 'regular',
+      title: 'Home'
     });
   });
 
@@ -21,7 +22,9 @@ module.exports.displayblog = function(req, res){
 //redirect to blog page
 module.exports.addBlog = (req, res) => {
   
-  return res.render('add-blog');
+  return res.render('add-blog',{
+    title: 'Add Blog'
+  });
   
 }
 
@@ -85,12 +88,16 @@ module.exports.blogReact = (req, res) => {
 
 //render signup page
 module.exports.signup = (req, res) => {
-  return res.render('sign-up');
+  return res.render('sign-up',{
+    title: 'Sign Up'
+  });
 }
 
 //render login
 module.exports.login = (req, res) => {
-  return res.render('login');
+  return res.render('login', {
+    title: 'Login'
+  });
 }
 
 // module.exports.createUser = (req, res) => {
