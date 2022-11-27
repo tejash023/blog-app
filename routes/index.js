@@ -3,6 +3,7 @@ const { append } = require('express/lib/response');
 
 const router = express.Router();
 const passport = require('passport');
+const googleOauth = require('../config/passport-google-oauth');
 
 const blogController = require('../controllers/blog_controller');
 
@@ -33,7 +34,7 @@ router.post('/create-session', passport.authenticate(
 
 //google
 router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
-router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/login'}),blogController.createUser);
+router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/login'}),blogController.createSession);
 
 
 router.get('/sign-out', blogController.destroySession);

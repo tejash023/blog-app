@@ -8,7 +8,7 @@ const User = require('../models/user');
 passport.use(new googleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: 'http://localhost:5000/user/auth/google/callback',
+    callbackURL: 'http://localhost:5000/auth/google/callback',
     
   },
   
@@ -17,7 +17,8 @@ passport.use(new googleStrategy({
     //find a user
     User.findOne({email: profile.emails[0].value}).exec(function(err, user){
       if(err){console.log('Error in Google starategy passport',err); return;}
-      console.log(profile);
+      // console.log(profile);
+      // console.log(user);
 
       if(user){
         //if found, set this user as req.user
@@ -30,7 +31,7 @@ passport.use(new googleStrategy({
           password: crypto.randomBytes(20).toString('hex')
         }, function(err, user){
           if(err){console.log('error in creating the user google strategy', err); return;}
-
+          //console.log("User", user);
           return done(null, user);
         })
       }

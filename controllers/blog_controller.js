@@ -93,27 +93,54 @@ module.exports.login = (req, res) => {
   return res.render('login');
 }
 
-module.exports.createUser = (req, res) => {
-  //if password and confirm password does not matches - redirect back to the signup page
-  if(req.body.password != req.body.confirm_password){
-    return res.redirect('back');
-  }
+// module.exports.createUser = (req, res) => {
+//   //if password and confirm password does not matches - redirect back to the signup page
+//   if(req.body.password != req.body.confirm_password){
+//     return res.redirect('back');
+//   }
 
-  //find the user using the email first before signing up - if email already exists
-  User.findOne({email:req.body.email}, function(err, user){
-    if(err){console.log('error in finding the user during signing up'); return}
+//   //find the user using the email first before signing up - if email already exists
+//   User.findOne({email:req.body.email}, function(err, user){
+//     if(err){console.log('error in finding the user during signing up'); return}
+
+//     //if user doesn't exist - create the user and redirect to login page
+//     if(!user){
+//       User.create(req.body, function(err, user){
+//         if(err){console.log('Error in creating the user during sign up'); return}
+//         return res.redirect('/login');
+//       })
+//     }else{
+//       //if user/email exists - redirect back
+//       return res.redirect('back');
+//     }
+//   })
+
+// }
+
+module.exports.createUser = async (req, res) => {
+  try{
+    //if password and confirm password does not matches - redirect back to the signup page
+    if(req.body.password != req.body.confirm_password){
+      return res.redirect('back');
+    }
+
+    console.log(req.body)
+
+    let user = await User.findOne({email:req.body.email});
 
     //if user doesn't exist - create the user and redirect to login page
     if(!user){
-      User.create(req.body, function(err, user){
-        if(err){console.log('Error in creating the user during sign up'); return}
-        return res.redirect('/login');
-      })
+      await User.create(req.body);
+      return res.redirect('/login');
     }else{
       //if user/email exists - redirect back
       return res.redirect('back');
     }
-  })
+  }catch(err){
+    if(err){
+      console.log('ERROR: ', err.message);
+    }
+  }
 
 }
 
