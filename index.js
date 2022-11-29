@@ -1,3 +1,5 @@
+//TODO - 1. add notification 2. Add edit feature 3. add like feature 4. Add markdown for writing blogs
+
 require('dotenv').config();
 //require express 
 const express = require('express');

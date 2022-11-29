@@ -19,10 +19,12 @@
       </div>
       
       <div class="blog-action">
+        <p class="blog-date"> <%= i.blogDate %> </p>
         <a href="/liked-blog?id=<%= i.id %>" class="blog-like"><i class="fa-<%= Like %> fa-heart"></i></a>
-        <h4 class="blog-date"> <%= i.blogDate %> </h4>
+        
       </div>
       <p class="blog-content"> <%= i.blogContent %> </p>
+      <a class= "read-more" href="/view-blog?id<%= i.id %>">Read more..</a>
       <h4 class="blog-author"> By - <%= i.blogAuthor %> </h4>
     
     </div>
