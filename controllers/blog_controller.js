@@ -49,6 +49,25 @@ module.exports.createBlog = (req, res) => {
   })
 }
 
+//view blog
+module.exports.viewBlog = async (req,res) => {
+  try{
+    let blog = await BlogPost.findById(req.query.id);
+    if(blog){
+      res.render('view-blog',{
+        title: blog.blogTitle,
+        content: blog.blogContent,
+        date: blog.blogDate,
+        author: blog.blogAuthor
+
+      });
+    }
+  }catch(err){
+
+  }
+  
+}
+
 //delete a blog
 module.exports.deleteBlog = (req, res) => {
 

@@ -26,6 +26,8 @@ router.get('/login', blogController.login);
 
 router.post('/create', blogController.createUser);
 
+router.get('/view-blog', blogController.viewBlog);
+
 //use passport as a middleware to authenticate
 router.post('/create-session', passport.authenticate(
   'local',

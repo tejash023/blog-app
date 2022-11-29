@@ -24,10 +24,14 @@ h1{
   cursor: pointer;
 }
 
+.add-blog:hover{
+  background-color: rgba(200, 55, 3, 0.788);
+}
+
 .blog-post{
   height: auto;
   background-color: beige;
-  padding: 15px;
+  padding: 15px 20px;
   border-radius: 10px;
   width: auto;
   margin: 16px 0;
@@ -46,7 +50,7 @@ h1{
   color: orangered;
 }
 .blog-date{
-  color: orangered;
+  color: rgb(114, 114, 114);
   padding: 4px 8px;
   width: auto;
   border-radius: 7px;
@@ -89,7 +93,7 @@ h1{
 .read-more:hover{
   
   border-bottom: 1.5px solid orangered;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   
 }
 
