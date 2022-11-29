@@ -63,7 +63,10 @@ module.exports.viewBlog = async (req,res) => {
       });
     }
   }catch(err){
-
+    if(err){
+      console.log(err.message);
+      return res.redirect('/');
+    }
   }
   
 }

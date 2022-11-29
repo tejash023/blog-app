@@ -1,2 +1,22 @@
 <link rel="stylesheet" href="/css/view-blog.css">
 
+
+<div class="view-blog-post">
+      
+  <div class="view-heading-info">
+    <h2 class="view-blog-heading"> <%= title %> </h2>
+    <% if(locals.user){ %>
+      <a href="/delete-blog?id=<%= i.id %>" class="view-blog-delete"><i class="fa-solid fa-trash-can"></i></a>
+    <%} %>
+  </div>
+  
+  <div class="view-blog-action">
+    
+    <p class="view-blog-date"> <%= date %> </p>
+    
+  </div>
+  <p class="view-blog-content"> <%= content %> </p>
+  
+  <h4 class="view-blog-author"> By - <%= author %> </h4>
+
+</div>
