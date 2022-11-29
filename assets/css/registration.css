@@ -22,6 +22,7 @@
 .signup-form h2{
   color: white;
   margin-bottom: 15px;
+  margin-left: 7px;
 }
 
 .signup-form input{
@@ -83,6 +84,7 @@
 .signin-form h2{
   color: white;
   margin-bottom: 15px;
+  margin-right: 7px;
 }
 
 .signin-form input{

@@ -55,6 +55,7 @@ module.exports.viewBlog = async (req,res) => {
     let blog = await BlogPost.findById(req.query.id);
     if(blog){
       res.render('view-blog',{
+        id: blog._id,
         title: blog.blogTitle,
         content: blog.blogContent,
         date: blog.blogDate,

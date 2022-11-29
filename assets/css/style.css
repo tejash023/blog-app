@@ -24,6 +24,10 @@ h1{
   cursor: pointer;
 }
 
+.add-blog i {
+  margin-right: 5px;
+}
+
 .add-blog:hover{
   background-color: rgba(200, 55, 3, 0.788);
 }
