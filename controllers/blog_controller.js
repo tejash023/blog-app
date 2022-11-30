@@ -1,21 +1,18 @@
 const BlogPost = require('../models/blogpost');
 const User = require('../models/user');
 
-module.exports.displayblog = function(req, res){
-  
+module.exports.displayblog = async function(req, res){
+  //console.log(req.user);
   //fetch data from DB and display on FE
-  BlogPost.find({}, function(err, blogPost){
-    if(err){
-      console.log('Error fetching data from DB');
-      return;
-    }
-    
-    return res.render('index', {
-      BlogPost: blogPost,
-      Like: 'regular',
-      title: 'Home'
-    });
+  let blog = await BlogPost.find({})
+  .populate('user');
+  
+  //console.log(blog);
+  return res.render('index', {
+    BlogPost: blog,
+    title: 'Home'
   });
+ 
 
 }
 
@@ -30,18 +27,20 @@ module.exports.addBlog = (req, res) => {
 
 //create Blog
 module.exports.createBlog = (req, res) => {
+
+  
   
   //Populate mongo DB
   var datetime = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
-  console.log(datetime);
+  //console.log(datetime);
   BlogPost.create({
     blogTitle: req.body.blogTitle,
     blogContent:req.body.blogContent,
     blogDate: datetime.slice(0,10),
-    blogAuthor: req.body.blogAuthor
+    blogAuthor: req.user.name
   }, function(err, newBlogPost){
     if(err){
-      console.log('Error in creating a blog post');
+      console.log('Error in creating a blog post', err.message);
       return;
     }
 
@@ -54,6 +53,7 @@ module.exports.viewBlog = async (req,res) => {
   try{
     let blog = await BlogPost.findById(req.query.id);
     if(blog){
+      //console.log(blog);
       res.render('view-blog',{
         id: blog._id,
         title: blog.blogTitle,
@@ -95,19 +95,7 @@ module.exports.deleteBlog = (req, res) => {
 
 }
 
-//like a blog
-module.exports.blogReact = (req, res) => {
-    //fetching the id
-    let id = req.query.id;
-    BlogPost.findByIdAndUpdate(id,{blogLike:true},function(err){
-      if(err){
-        console.log('Error liking the blog post');
-        return;
-      }
-  
-      return res.redirect('/');
-    });
-}
+
 
 //render signup page
 module.exports.signup = (req, res) => {
@@ -123,29 +111,6 @@ module.exports.login = (req, res) => {
   });
 }
 
-// module.exports.createUser = (req, res) => {
-//   //if password and confirm password does not matches - redirect back to the signup page
-//   if(req.body.password != req.body.confirm_password){
-//     return res.redirect('back');
-//   }
-
-//   //find the user using the email first before signing up - if email already exists
-//   User.findOne({email:req.body.email}, function(err, user){
-//     if(err){console.log('error in finding the user during signing up'); return}
-
-//     //if user doesn't exist - create the user and redirect to login page
-//     if(!user){
-//       User.create(req.body, function(err, user){
-//         if(err){console.log('Error in creating the user during sign up'); return}
-//         return res.redirect('/login');
-//       })
-//     }else{
-//       //if user/email exists - redirect back
-//       return res.redirect('back');
-//     }
-//   })
-
-// }
 
 module.exports.createUser = async (req, res) => {
   try{
@@ -153,8 +118,6 @@ module.exports.createUser = async (req, res) => {
     if(req.body.password != req.body.confirm_password){
       return res.redirect('back');
     }
-
-    console.log(req.body)
 
     let user = await User.findOne({email:req.body.email});
 

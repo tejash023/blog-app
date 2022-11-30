@@ -18,7 +18,7 @@ router.post('/add-blog', blogController.createBlog);
 
 router.get('/delete-blog', passport.checkAuthetication, blogController.deleteBlog);
 
-router.get('/liked-blog',passport.checkAuthetication, blogController.blogReact);
+
 
 router.get('/sign-up',blogController.signup);
 

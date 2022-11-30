@@ -22,11 +22,11 @@
       
       <div class="blog-action">
         
-        <a href="/liked-blog?id= <%= i.id %>" class="blog-like"><i class="fa-<%= Like %> fa-heart"></i></a>
+        <a href="" class="blog-like"><i class="fa-solid fa-heart"></i></a>
         <p class="blog-date"> <%= i.blogDate %> </p>
         
       </div>
-      <p class="blog-content"> <%= i.blogContent %> </p>
+      <div class="blog-content"> <%- i.blogContent %> </div>
       <a class= "read-more" href="/view-blog?id=<%= i.id %>">Read more..</a>
       <h4 class="blog-author"> By - <%= i.blogAuthor %> </h4>
     

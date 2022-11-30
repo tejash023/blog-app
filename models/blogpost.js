@@ -8,7 +8,7 @@ const blogSchema = new mongoose.Schema({
     required:true
   },
   blogContent:{
-    type:String,
+    type: String,
     required:true
   },
   blogDate:{
@@ -19,10 +19,12 @@ const blogSchema = new mongoose.Schema({
     type:String,
     required:true
   },
-  blogLike:{
-    type:Boolean,
-    required:false
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'User'
   }
+},{
+  timestamps: true
 });
 
 
