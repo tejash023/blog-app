@@ -124,6 +124,10 @@ h1{
   font-size: 1rem;
 }
 
+.editor-section{
+  height: 40vh;
+}
+
 .add-blog-submit{
   margin: 10px 0;
   padding: 9px 10px;
