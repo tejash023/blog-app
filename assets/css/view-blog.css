@@ -3,9 +3,12 @@
   padding: 25px 20px;
   border-radius: 10px;
   width: auto;
-  max-width: 100%;
+  
   margin: auto 5%;
   
+}
+.view-blog-post p img{
+  max-width: 100%;
 }
 
 .view-heading-info{

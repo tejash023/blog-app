@@ -39,7 +39,7 @@ h1{
   border-radius: 10px;
   width: auto;
   margin: 16px 0;
-  box-shadow: rgba(74, 74, 74, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(74, 74, 74, 0.35) 0px 5px 15px; */
 }
 
 .heading-info{
@@ -84,7 +84,7 @@ h1{
   display: -webkit-box;
   overflow: hidden !important;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
 }
 
 .read-more{

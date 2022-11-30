@@ -8,7 +8,7 @@
 }
 
 .container{
-  margin: auto 10%;
+  margin: auto 6%;
   
 }
 
@@ -19,7 +19,7 @@ header {
   justify-content: space-between;
   background-color: orangered;
   height: 13vh;
-  padding: 0 10%;
+  padding: 0 6%;
 }
 
 
@@ -109,7 +109,7 @@ header h3 {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 55%;
+    width: 30%;
     font-size: 1rem;
   }
 
@@ -119,11 +119,12 @@ header h3 {
     background-color: transparent;
     padding: 0px;
     border-radius: 0px;
-    width: 70%;
+  
   }
 
   .login a:hover{
-    border-bottom: 2px solid white;
+    transition: all 0.1s ease-in;
+    border-bottom: 1.5px solid white;
   }
 
   header a{
@@ -136,8 +137,18 @@ header h3 {
 }
 
 @media only screen and (max-width: 600px){
+  header {
+  
+    height: 10vh;
+    
+  }
   .container{
     margin: auto 5%;
     
+  }
+
+  .login{
+    width: 60%;
+    font-size: 0.9rem;
   }
 }

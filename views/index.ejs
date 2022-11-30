@@ -15,17 +15,18 @@
       
       <div class="heading-info">
         <h2 class="blog-heading"> <%= i.blogTitle %> </h2>
-        <% if(locals.user){ %>
+        <p class="blog-date"> <%= i.blogDate %> </p>
+        <!-- <% if(locals.user){ %>
           <a href="/delete-blog?id=<%= i.id %>" class="blog-delete"><i class="fa-solid fa-trash-can"></i></a>
-        <%} %>
+        <%} %> -->
       </div>
       
-      <div class="blog-action">
+      <!-- <div class="blog-action">
         
         <a href="" class="blog-like"><i class="fa-solid fa-heart"></i></a>
-        <p class="blog-date"> <%= i.blogDate %> </p>
         
-      </div>
+        
+      </div> -->
       <div class="blog-content"> <%- i.blogContent %> </div>
       <a class= "read-more" href="/view-blog?id=<%= i.id %>">Read more..</a>
       <h4 class="blog-author"> By - <%= i.blogAuthor %> </h4>
