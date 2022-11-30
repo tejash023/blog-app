@@ -2,7 +2,7 @@
   <h2 class="logo-heading"> <a href="/" class="href">Blogs</a></h2>
   <div class="login">
     <% if(locals.user){ %>
-      <p>Hi, <%= user.name %></p>
+      <a href="/profile?id=<%= user._id %>">Hi, <%= user.name %></a>
       <a href="/sign-out">Sign Out</a>
     <% }else{ %>
       <a href="/login">Login</a>

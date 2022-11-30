@@ -25,27 +25,49 @@ module.exports.addBlog = (req, res) => {
   
 }
 
-//create Blog
-module.exports.createBlog = (req, res) => {
+// //create Blog
+// module.exports.createBlog = (req, res) => {
 
-  
-  
-  //Populate mongo DB
-  var datetime = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
-  //console.log(datetime);
-  BlogPost.create({
-    blogTitle: req.body.blogTitle,
-    blogContent:req.body.blogContent,
-    blogDate: datetime.slice(0,10),
-    blogAuthor: req.user.name
-  }, function(err, newBlogPost){
-    if(err){
-      console.log('Error in creating a blog post', err.message);
-      return;
-    }
+//   //Populate mongo DB
+//   var datetime = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+//   //console.log(datetime);
+//   BlogPost.create({
+//     blogTitle: req.body.blogTitle,
+//     blogContent:req.body.blogContent,
+//     blogDate: datetime.slice(0,10),
+//     blogAuthor: req.user.name
+//   }, function(err, newBlogPost){
+//     if(err){
+//       console.log('Error in creating a blog post', err.message);
+//       return;
+//     }
+
+//     return res.redirect('/');
+//   })
+// }
+
+//create blog
+module.exports.createBlog = async (req, res) => {
+  try{
+    var datetime = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+    let user = await User.findById(req.user._id);
+    let blog = await BlogPost.create({
+      blogTitle: req.body.blogTitle,
+      blogContent:req.body.blogContent,
+      blogDate: datetime.slice(0,10),
+      blogAuthor: req.user.name
+    });
+    user.blogs.push(blog);
+    user.save();
 
     return res.redirect('/');
-  })
+
+  }catch(err){
+    console.log('Error in creating a blog post', err.message);
+    return res.redirect('back');
+  }
+  
+
 }
 
 //view blog
@@ -148,4 +170,21 @@ module.exports.destroySession = (req, res) => {
     if(err) { return next(err);}
     res.redirect('/');
   })
+}
+
+//render profile page
+module.exports.profilePage = async (req, res) => {
+  try{
+    let user = await User.findById(req.query.id);
+    if(user){
+      
+      res.render('profile',{
+        title: 'Profile',
+        user: user,
+        blogs: user.blogs
+      })
+    }
+  }catch(err){
+
+  }
 }

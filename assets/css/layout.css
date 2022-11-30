@@ -42,15 +42,11 @@ header h3 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 25%;
+  width: 40%;
   gap: 1rem
 }
 
-.login p{
-  font-size: 13px;
-    font-weight: 600;
-    color: white;
-}
+
 
 .login a {
   color: orangered;
@@ -109,7 +105,7 @@ header h3 {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 30%;
+    width: 55%;
     font-size: 1rem;
   }
 
@@ -149,6 +145,6 @@ header h3 {
 
   .login{
     width: 60%;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
